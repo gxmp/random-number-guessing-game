@@ -13,14 +13,7 @@ guessField.focus();
 
 function checkGuess () {
   // +guessField is similar to Number(guessField.value)
-  let userGuess = guessField.value;
-
-  if (typeof userGuess !== "number") {
-    lastResult.textContent = 'Error! You must enter a number';
-    lastResult.style.backgroundColor = 'red';
-    setGameOver();
-    return;
-  }
+  let userGuess = +guessField.value;
 
   if (guessCount === 1) {
     guesses.textContent = 'Previous guesses: ' ;
